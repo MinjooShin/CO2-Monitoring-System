@@ -1,87 +1,87 @@
-# CO2-Watchdog-Notification-System
+# CO2-Monitoring-System
 
-CO2 Watchdog Notification SystemÀº CO2¿Í ¼Ò¸® ¼öÁØÀ» ½Ç½Ã°£À¸·Î ¸ð´ÏÅÍ¸µÇÏ°í ÀÌ¸¦ ½Ã°¢ÀûÀ¸·Î Ç¥ÇöÇÏ¸ç, CO2 µ¥ÀÌÅÍ¸¦ ºí·çÅõ½º¸¦ ÅëÇØ ¿ø°ÝÀ¸·Î Àü¼ÛÇÏ´Â ½Ã½ºÅÛÀÔ´Ï´Ù. ÀÌ ½Ã½ºÅÛÀº nRF52840 DK º¸µå¸¦ ±â¹ÝÀ¸·Î °³¹ßµÇ¾úÀ¸¸ç, Zephyr RTOS¸¦ »ç¿ëÇÕ´Ï´Ù.
+CO2 Monitoring Systemì€ CO2ì™€ ì†Œë¦¬ ìˆ˜ì¤€ì„ ì‹¤ì‹œê°„ìœ¼ë¡œ ëª¨ë‹ˆí„°ë§í•˜ê³  ì´ë¥¼ ì‹œê°ì ìœ¼ë¡œ í‘œí˜„í•˜ë©°, CO2 ë°ì´í„°ë¥¼ ë¸”ë£¨íˆ¬ìŠ¤ë¥¼ í†µí•´ ì›ê²©ìœ¼ë¡œ ì „ì†¡í•˜ëŠ” ì‹œìŠ¤í…œìž…ë‹ˆë‹¤. ì´ ì‹œìŠ¤í…œì€ nRF52840 DK ë³´ë“œë¥¼ ê¸°ë°˜ìœ¼ë¡œ ê°œë°œë˜ì—ˆìœ¼ë©°, Zephyr RTOSë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤.
 
-## ÁÖ¿ä ±â´É
-- CO2 ¼öÁØ ¸ð´ÏÅÍ¸µ (UART)
-- ¼Ò¸® ¼öÁØ ¸ð´ÏÅÍ¸µ (ADC)
-- CO2 ¼öÁØ ½Ã°¢È­ (¹èÅÍ¸® µð½ºÇÃ·¹ÀÌ)
-- ¼Ò¸® ¼öÁØ ½Ã°¢È­ (µµÆ® ¸ÅÆ®¸¯½º LED)
-- CO2 µ¥ÀÌÅÍ ¿ø°Ý Àü¼Û (Bluetooth)
-- ½Ã½ºÅÛ ÃÊ±âÈ­ (¹öÆ° ÀÔ·Â)
+## ì£¼ìš” ê¸°ëŠ¥
+- CO2 ìˆ˜ì¤€ ëª¨ë‹ˆí„°ë§ (UART)
+- ì†Œë¦¬ ìˆ˜ì¤€ ëª¨ë‹ˆí„°ë§ (ADC)
+- CO2 ìˆ˜ì¤€ ì‹œê°í™” (ë°°í„°ë¦¬ ë””ìŠ¤í”Œë ˆì´)
+- ì†Œë¦¬ ìˆ˜ì¤€ ì‹œê°í™” (ë„íŠ¸ ë§¤íŠ¸ë¦­ìŠ¤ LED)
+- CO2 ë°ì´í„° ì›ê²© ì „ì†¡ (Bluetooth)
+- ì‹œìŠ¤í…œ ì´ˆê¸°í™” (ë²„íŠ¼ ìž…ë ¥)
 
-## ¿ä±¸»çÇ×
-- nRF52840 DK º¸µå
+## ìš”êµ¬ì‚¬í•­
+- nRF52840 DK ë³´ë“œ
 - Rich Shield
-    - CO2 ¼¾¼­
-    - ¼Ò¸® ¼¾¼­
-    - ¹èÅÍ¸® µð½ºÇÃ·¹ÀÌ
-    - µµÆ® ¸ÅÆ®¸¯½º LED
+    - CO2 ì„¼ì„œ
+    - ì†Œë¦¬ ì„¼ì„œ
+    - ë°°í„°ë¦¬ ë””ìŠ¤í”Œë ˆì´
+    - ë„íŠ¸ ë§¤íŠ¸ë¦­ìŠ¤ LED
 - Zephyr RTOS
 - nRF Connect SDK
-- Visual Studio Code (ÃßÃµ)
-- ½º¸¶Æ®Æù (Bluetooth ±â´É ÇÊ¿ä)
-- nRF Connect for Mobile ¾Û (Android/iOS)
+- Visual Studio Code (ì¶”ì²œ)
+- ìŠ¤ë§ˆíŠ¸í° (Bluetooth ê¸°ëŠ¥ í•„ìš”)
+- nRF Connect for Mobile ì•± (Android/iOS)
 
 
-## ¼³Á¤ ¹× ºôµå
-1. **nRF Connect SDK ¹× VS Code È®ÀåÆÑ ¼³Ä¡**
-    - [nRF Connect for VS Code](https://marketplace.visualstudio.com/items?itemName=nordic-semiconductor.nrf-connect) È®ÀåÆÑÀ» ¼³Ä¡ÇÕ´Ï´Ù. ÀÌ È®ÀåÆÑÀ» ¼³Ä¡ÇÏ¸é ÇÊ¿äÇÑ nRF Connect SDK¿Í ÅøÃ¼ÀÎµµ ÇÔ²² ¼³Ä¡µË´Ï´Ù.
+## ì„¤ì • ë° ë¹Œë“œ
+1. **nRF Connect SDK ë° VS Code í™•ìž¥íŒ© ì„¤ì¹˜**
+    - [nRF Connect for VS Code](https://marketplace.visualstudio.com/items?itemName=nordic-semiconductor.nrf-connect) í™•ìž¥íŒ©ì„ ì„¤ì¹˜í•©ë‹ˆë‹¤. ì´ í™•ìž¥íŒ©ì„ ì„¤ì¹˜í•˜ë©´ í•„ìš”í•œ nRF Connect SDKì™€ íˆ´ì²´ì¸ë„ í•¨ê»˜ ì„¤ì¹˜ë©ë‹ˆë‹¤.
 
-2. **ÇÁ·ÎÁ§Æ® Å¬·Ð**
+2. **í”„ë¡œì íŠ¸ í´ë¡ **
     ```bash
-    git clone https://github.com/MinjooShin/CO2-Watchdog-Notification-System.git
-    cd CO2-Watchdog-Notification-System
+    git clone https://github.com/MinjooShin/CO2-Monitoring-System.git
+    cd CO2-Monitoring-System
     ```
 
-3. **Visual Studio Code ¼³Á¤**
-    - VS Code¿¡¼­ `nRF Connect` È®ÀåÆÑÀ» »ç¿ëÇÏ¿© ÇÁ·ÎÁ§Æ®¸¦ ¿­¾î ºôµåÇÕ´Ï´Ù.
+3. **Visual Studio Code ì„¤ì •**
+    - VS Codeì—ì„œ `nRF Connect` í™•ìž¥íŒ©ì„ ì‚¬ìš©í•˜ì—¬ í”„ë¡œì íŠ¸ë¥¼ ì—´ì–´ ë¹Œë“œí•©ë‹ˆë‹¤.
 
-4. **º¸µå ¿¬°á ¹× ºôµå**
-    - nRF52840 DK º¸µå¸¦ ¿¬°áÇÏ°í, ÇÁ·ÎÁ§Æ®¸¦ ºôµå ¹× ÇÃ·¡½ÃÇÕ´Ï´Ù.
+4. **ë³´ë“œ ì—°ê²° ë° ë¹Œë“œ**
+    - nRF52840 DK ë³´ë“œë¥¼ ì—°ê²°í•˜ê³ , í”„ë¡œì íŠ¸ë¥¼ ë¹Œë“œ ë° í”Œëž˜ì‹œí•©ë‹ˆë‹¤.
     ```bash
     west build -b nrf52840dk_nrf52840
     west flash
     ```
 
-4. **Bluetooth ¿ø°Ý Àü¼Û**
-    - CO2 µ¥ÀÌÅÍ´Â ºí·çÅõ½º¸¦ ÅëÇØ ¿ø°ÝÀ¸·Î Àü¼ÛµË´Ï´Ù. ¿¬°á »óÅÂ´Â LED·Î È®ÀÎÇÒ ¼ö ÀÖ½À´Ï´Ù.
+4. **Bluetooth ì›ê²© ì „ì†¡**
+    - CO2 ë°ì´í„°ëŠ” ë¸”ë£¨íˆ¬ìŠ¤ë¥¼ í†µí•´ ì›ê²©ìœ¼ë¡œ ì „ì†¡ë©ë‹ˆë‹¤. ì—°ê²° ìƒíƒœëŠ” LEDë¡œ í™•ì¸í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-5. **Bluetooth ¾Û »ç¿ë**
-    - ½º¸¶Æ®Æù¿¡ nRF Connect for Mobile ¾ÛÀ» ¼³Ä¡ÇÕ´Ï´Ù (Android/iOS).
-    - ¾ÛÀ» ¿­°í, CO2_WatchdogÀ» °Ë»öÇÏ¿© ¿¬°áÇÕ´Ï´Ù.
-    - ¿¬°áµÈ ÈÄ, UUID "87654321-4321-8765-4321-876543218765"¸¦ Ã£¾Æ Enable ½ÃÅµ´Ï´Ù.
-    - Enable µÇ¸é, CO2 µ¥ÀÌÅÍ¸¦ ½Ç½Ã°£À¸·Î ¸ð´ÏÅÍ¸µÇÒ ¼ö ÀÖ½À´Ï´Ù. (µ¥ÀÌÅÍ ÆÄ¼­ ¼³Á¤À» ÅëÇØ µ¥ÀÌÅÍ¸¦ ÆíÇÑ Çü½ÄÀ¸·Î º¼ ¼ö ÀÖ½À´Ï´Ù.)
+5. **Bluetooth ì•± ì‚¬ìš©**
+    - ìŠ¤ë§ˆíŠ¸í°ì— nRF Connect for Mobile ì•±ì„ ì„¤ì¹˜í•©ë‹ˆë‹¤ (Android/iOS).
+    - ì•±ì„ ì—´ê³ , CO2_Watchdogì„ ê²€ìƒ‰í•˜ì—¬ ì—°ê²°í•©ë‹ˆë‹¤.
+    - ì—°ê²°ëœ í›„, UUID "87654321-4321-8765-4321-876543218765"ë¥¼ ì°¾ì•„ Enable ì‹œí‚µë‹ˆë‹¤.
+    - Enable ë˜ë©´, CO2 ë°ì´í„°ë¥¼ ì‹¤ì‹œê°„ìœ¼ë¡œ ëª¨ë‹ˆí„°ë§í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. (ë°ì´í„° íŒŒì„œ ì„¤ì •ì„ í†µí•´ ë°ì´í„°ë¥¼ íŽ¸í•œ í˜•ì‹ìœ¼ë¡œ ë³¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.)
 
-## »ç¿ë¹ý
-1. **½Ã½ºÅÛ ÃÊ±âÈ­**
-    - º¸µåÀÇ ¹öÆ°1À» ´­·¯ ½Ã½ºÅÛÀ» ÃÊ±âÈ­ÇÕ´Ï´Ù. ÃÊ±âÈ­ ÈÄ CO2¿Í ¼Ò¸® ¼öÁØÀ» ¸ð´ÏÅÍ¸µÇÒ ÁØºñ°¡ µË´Ï´Ù.
+## ì‚¬ìš©ë²•
+1. **ì‹œìŠ¤í…œ ì´ˆê¸°í™”**
+    - ë³´ë“œì˜ ë²„íŠ¼1ì„ ëˆŒëŸ¬ ì‹œìŠ¤í…œì„ ì´ˆê¸°í™”í•©ë‹ˆë‹¤. ì´ˆê¸°í™” í›„ CO2ì™€ ì†Œë¦¬ ìˆ˜ì¤€ì„ ëª¨ë‹ˆí„°ë§í•  ì¤€ë¹„ê°€ ë©ë‹ˆë‹¤.
 
-2. **CO2 ¼öÁØ ¸ð´ÏÅÍ¸µ**
-    - CO2 ¼¾¼­¸¦ ÅëÇØ UART·Î µ¥ÀÌÅÍ¸¦ ¼ö½ÅÇÕ´Ï´Ù. ¼ö½ÅµÈ µ¥ÀÌÅÍ´Â ¹èÅÍ¸® µð½ºÇÃ·¹ÀÌ¿¡ ½Ã°¢È­µË´Ï´Ù.
+2. **CO2 ìˆ˜ì¤€ ëª¨ë‹ˆí„°ë§**
+    - CO2 ì„¼ì„œë¥¼ í†µí•´ UARTë¡œ ë°ì´í„°ë¥¼ ìˆ˜ì‹ í•©ë‹ˆë‹¤. ìˆ˜ì‹ ëœ ë°ì´í„°ëŠ” ë°°í„°ë¦¬ ë””ìŠ¤í”Œë ˆì´ì— ì‹œê°í™”ë©ë‹ˆë‹¤.
 
-3. **¼Ò¸® ¼öÁØ ¸ð´ÏÅÍ¸µ**
-    - ¼Ò¸® ¼¾¼­¸¦ ÅëÇØ ADC·Î µ¥ÀÌÅÍ¸¦ ¼ö½ÅÇÕ´Ï´Ù. ¼ö½ÅµÈ µ¥ÀÌÅÍ´Â µµÆ® ¸ÅÆ®¸¯½º LED¿¡ µ¿Àû ±×·¡ÇÁ·Î ½Ã°¢È­µË´Ï´Ù.
+3. **ì†Œë¦¬ ìˆ˜ì¤€ ëª¨ë‹ˆí„°ë§**
+    - ì†Œë¦¬ ì„¼ì„œë¥¼ í†µí•´ ADCë¡œ ë°ì´í„°ë¥¼ ìˆ˜ì‹ í•©ë‹ˆë‹¤. ìˆ˜ì‹ ëœ ë°ì´í„°ëŠ” ë„íŠ¸ ë§¤íŠ¸ë¦­ìŠ¤ LEDì— ë™ì  ê·¸ëž˜í”„ë¡œ ì‹œê°í™”ë©ë‹ˆë‹¤.
 
-4. **Bluetooth ¿ø°Ý Àü¼Û**
-    - CO2 µ¥ÀÌÅÍ´Â ºí·çÅõ½º¸¦ ÅëÇØ ¿ø°ÝÀ¸·Î Àü¼ÛµË´Ï´Ù. ¿¬°á »óÅÂ´Â LED·Î È®ÀÎÇÒ ¼ö ÀÖ½À´Ï´Ù.
+4. **Bluetooth ì›ê²© ì „ì†¡**
+    - CO2 ë°ì´í„°ëŠ” ë¸”ë£¨íˆ¬ìŠ¤ë¥¼ í†µí•´ ì›ê²©ìœ¼ë¡œ ì „ì†¡ë©ë‹ˆë‹¤. ì—°ê²° ìƒíƒœëŠ” LEDë¡œ í™•ì¸í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-## Âü°í ÀÚ·á
+## ì°¸ê³  ìžë£Œ
 - [Zephyr Project](https://zephyrproject.org/)
 - [nRF Connect SDK](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [nRF Connect for Mobile](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-mobile)
 - [Nordic DevAcademy](https://academy.nordicsemi.com/)
 
-## ±â¿© ¹æ¹ý
-1. ÀÌ ÇÁ·ÎÁ§Æ®¸¦ Æ÷Å©ÇÕ´Ï´Ù.
-2. »õ ºê·£Ä¡¸¦ ¸¸µì´Ï´Ù (`git checkout -b feature/fooBar`).
-3. º¯°æ »çÇ×À» Ä¿¹ÔÇÕ´Ï´Ù (`git commit -am 'Add some fooBar'`).
-4. ºê·£Ä¡¿¡ Çª½ÃÇÕ´Ï´Ù (`git push origin feature/fooBar`).
-5. Ç® ¸®Äù½ºÆ®¸¦ »ý¼ºÇÕ´Ï´Ù.
+## ê¸°ì—¬ ë°©ë²•
+1. ì´ í”„ë¡œì íŠ¸ë¥¼ í¬í¬í•©ë‹ˆë‹¤.
+2. ìƒˆ ë¸Œëžœì¹˜ë¥¼ ë§Œë“­ë‹ˆë‹¤ (`git checkout -b feature/fooBar`).
+3. ë³€ê²½ ì‚¬í•­ì„ ì»¤ë°‹í•©ë‹ˆë‹¤ (`git commit -am 'Add some fooBar'`).
+4. ë¸Œëžœì¹˜ì— í‘¸ì‹œí•©ë‹ˆë‹¤ (`git push origin feature/fooBar`).
+5. í’€ ë¦¬í€˜ìŠ¤íŠ¸ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 
-## µ¥¸ð
-[CO2 Watchdog Notification System µ¥¸ð ¿µ»ó](https://youtu.be/EPjfsvNmhLU)
+## ë°ëª¨
+[CO2 Monitoring System ë°ëª¨ ì˜ìƒ](https://youtu.be/EPjfsvNmhLU)
 
-## ¹®ÀÇ
-- ÀÌ ÇÁ·ÎÁ§Æ®¿Í °ü·ÃµÈ ¹®ÀÇ»çÇ×Àº [ÀÌ½´](https://github.com/MinjooShin/CO2-Watchdog-Notification-System/issues)¸¦ ÅëÇØ ³²°ÜÁÖ¼¼¿ä.
+## ë¬¸ì˜
+- ì´ í”„ë¡œì íŠ¸ì™€ ê´€ë ¨ëœ ë¬¸ì˜ì‚¬í•­ì€ [ì´ìŠˆ](https://github.com/MinjooShin/CO2-Monitoring-System/issues)ë¥¼ í†µí•´ ë‚¨ê²¨ì£¼ì„¸ìš”.
